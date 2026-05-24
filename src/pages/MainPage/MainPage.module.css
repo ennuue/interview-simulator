@@ -1,0 +1,148 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 78px;
+  background: var(--color-bg);
+}
+
+.container {
+  width: 100%;
+  max-width: 1294px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 660px) minmax(520px, 570px);
+  gap: 64px;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  max-width: 630px;
+}
+
+.heroBadge {
+  margin-bottom: 34px;
+}
+
+.title {
+  max-width: 660px;
+  margin: 0;
+  font-size: clamp(64px, 5.45vw, 84px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.065em;
+  white-space: normal;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.title span {
+  display: block;
+}
+
+.titleAccent {
+  color: var(--color-primary);
+}
+
+.titleUnderlined {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+}
+
+.titleUnderlined::after {
+  content: '';
+  position: absolute;
+  right: 0.08em;
+  bottom: 0.02em;
+  left: 0.1em;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--color-primary-border);
+}
+
+.description {
+  margin: 34px 0 36px;
+}
+
+.cta {
+  min-width: 206px;
+}
+
+.buttonArrow {
+  width: 22px;
+  height: 22px;
+  margin-left: 12px;
+}
+
+.questionCard {
+  padding: 30px;
+}
+
+.questionCard h3 {
+  margin: 0 0 20px;
+}
+
+.questionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.timer {
+}
+
+.questionContent {
+  min-width: 0;
+}
+
+.questionTitle {
+  margin: 0 0 22px;
+}
+
+.questionTitle code {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.progress {
+  margin-bottom: 24px;
+  --progress-height: 9px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.answerButton {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .page {
+    padding: 32px 24px 56px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .heroContent {
+    max-width: none;
+  }
+}
+
+@media (max-width: 720px) {
+  .questionCard {
+    padding: 20px;
+  }
+}

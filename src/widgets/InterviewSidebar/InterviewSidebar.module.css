@@ -1,0 +1,156 @@
+.root {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  padding:
+    var(--interview-layout-sidebar-padding-top)
+    var(--interview-layout-sidebar-padding-inline)
+    var(--interview-layout-sidebar-padding-bottom);
+  border-right: 1px solid var(--color-border);
+  background: var(--color-surface);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 60px;
+}
+
+.logo {
+  display: inline-flex;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  color: var(--color-text-inverse);
+  background: var(--color-primary);
+}
+
+.brandName {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.steps {
+  min-width: 0;
+}
+
+.stepsLabel {
+  margin: 0 0 26px 4px;
+}
+
+.stepsList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step {
+  display: grid;
+  min-height: 68px;
+  grid-template-columns: 36px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 13px 14px;
+  border-radius: 16px;
+  color: var(--color-text-secondary);
+}
+
+.done {
+  color: var(--color-text-primary);
+}
+
+.active {
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.stepIcon {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-text-muted);
+  background: var(--color-bg-2);
+}
+
+.done .stepIcon {
+  color: var(--color-success);
+  background: var(--color-success-soft);
+}
+
+.active .stepIcon {
+  color: var(--color-text-inverse);
+  background: var(--color-primary);
+}
+
+.checkIcon {
+  width: 19px;
+  height: 19px;
+}
+
+.stepText {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.stepTitle {
+  overflow: hidden;
+  color: currentColor;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stepDescription {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.active .stepDescription {
+  color: var(--color-primary);
+}
+
+.actionButton {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding: 0;
+  border: 0;
+  color: var(--color-text-muted);
+  background: transparent;
+  font: inherit;
+  cursor: pointer;
+}
+
+.actionButton:hover,
+.actionButton:focus-visible {
+  color: var(--color-primary);
+}
+
+.actionButton:focus-visible {
+  outline: 3px solid var(--color-primary-border);
+  outline-offset: 4px;
+}
+
+.actionButton svg {
+  width: 18px;
+  height: 18px;
+}
+
+@media (max-width: 900px) {
+  .root {
+    display: none;
+  }
+}

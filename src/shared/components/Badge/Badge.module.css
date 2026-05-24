@@ -1,0 +1,24 @@
+.root {
+  display: inline-flex;
+  min-height: 34px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 0 14px;
+  border: 1px solid var(--badge-border-color, var(--color-primary-border));
+  border-radius: 999px;
+  color: var(--badge-color, var(--color-primary));
+  background: var(--badge-background, var(--color-primary-soft));
+  font-family: var(--font-mono);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.root::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+}

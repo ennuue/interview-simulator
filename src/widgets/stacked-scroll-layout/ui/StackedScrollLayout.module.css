@@ -1,0 +1,89 @@
+/* StackedScrollLayout — каждая секция = sticky-карточка, наезжающая
+   на предыдущую при скролле. Чистый CSS, без библиотек. */
+
+.root {
+  /* контейнер сам по себе ничего не делает,
+     но даёт хук для overflow/scroll, если нужен внутренний скролл */
+  position: relative;
+  width: 100%;
+}
+
+.section {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  width: 100%;
+  overflow: hidden;
+
+  /* радиус сверху + тень = «карточный» вид */
+  border-radius: 32px 32px 0 0;
+  box-shadow: 0 -28px 60px -28px rgba(15, 23, 42, 0.18);
+
+  /* непрозрачный фон обязателен — иначе предыдущая секция просвечивает */
+  background: var(--stack-bg, #ffffff);
+  color: var(--stack-fg, #0f172a);
+
+  /* Сами страницы управляют своими отступами и внутренней сеткой. */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+.section > * {
+  width: 100%;
+  min-height: 100svh;
+}
+
+/* первая секция не должна выглядеть «приехавшей» — она в самом начале */
+.section:first-child {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* z-index стопкой: каждая следующая поверх предыдущей */
+.section:nth-child(1)  { z-index: 1; }
+.section:nth-child(2)  { z-index: 2; }
+.section:nth-child(3)  { z-index: 3; }
+.section:nth-child(4)  { z-index: 4; }
+.section:nth-child(5)  { z-index: 5; }
+.section:nth-child(6)  { z-index: 6; }
+.section:nth-child(7)  { z-index: 7; }
+.section:nth-child(8)  { z-index: 8; }
+
+/* индикатор-прогресс сверху */
+.progress {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 100;
+  padding: 6px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.dot {
+  width: 24px;
+  height: 4px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.14);
+  transition: background 0.3s, width 0.3s;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: var(--stack-accent, #2563eb);
+  width: 48px;
+}
+
+/* поддержка тёмных секций — клиент задаёт через --stack-bg/--stack-fg */
+@media (prefers-reduced-motion: reduce) {
+  .section { transition: none; }
+}

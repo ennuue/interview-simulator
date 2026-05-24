@@ -1,0 +1,98 @@
+.root {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 58px;
+  padding: 0 18px;
+  border: 1px solid var(--radio-border-color);
+  border-radius: 14px;
+  --radio-background: var(--color-surface);
+  --radio-border-color: var(--color-border);
+  --radio-control-color: var(--color-text-muted);
+  --radio-text-color: var(--color-text-primary);
+  color: var(--radio-text-color);
+  background-color: var(--radio-background);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.4;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.root:hover:not(.disabled) {
+  --radio-border-color: var(--color-primary);
+}
+
+.root:focus-within {
+  outline: 3px solid var(--color-primary-border);
+  outline-offset: 2px;
+}
+
+.root:has(input:checked) {
+  --radio-background: var(--color-primary-soft);
+  --radio-border-color: var(--color-primary);
+  --radio-control-color: var(--color-primary);
+  --radio-text-color: var(--color-primary);
+}
+
+.root:has(input:disabled) {
+  --radio-background: var(--color-bg-2);
+  --radio-border-color: transparent;
+  --radio-control-color: var(--color-text-muted);
+  --radio-text-color: var(--color-text-muted);
+  cursor: not-allowed;
+}
+
+.success {
+  --radio-background: var(--color-success-soft);
+  --radio-border-color: var(--color-success);
+  --radio-control-color: var(--color-success);
+  --radio-text-color: var(--color-success);
+  cursor: default;
+}
+
+.error {
+  --radio-background: var(--color-error-soft);
+  --radio-border-color: var(--color-error);
+  --radio-control-color: var(--color-error);
+  --radio-text-color: var(--color-error);
+  cursor: default;
+}
+
+.control {
+  width: 24px;
+  height: 24px;
+  margin-right: 14px;
+  padding: 0;
+  color: var(--radio-control-color);
+}
+
+.control svg {
+  width: 24px;
+  height: 24px;
+}
+
+.control:hover {
+  background: transparent;
+}
+
+.control:global(.Mui-disabled) {
+  color: var(--radio-control-color);
+}
+
+.label {
+  min-width: 0;
+  flex: 1;
+  user-select: none;
+}
+
+.statusIcon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  margin-left: auto;
+  color: currentColor;
+}

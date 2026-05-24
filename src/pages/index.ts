@@ -1,0 +1,5 @@
+export { FormatPage } from './FormatPage'
+export { MainPage } from './MainPage'
+export { ProfessionSelectPage } from './ProfessionSelectPage'
+export { ResultPage } from './ResultPage'
+export { TestPage } from './TestPage'

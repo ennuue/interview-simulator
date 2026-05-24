@@ -1,0 +1,121 @@
+.root {
+  margin: 0;
+  color: var(--typograph-color, var(--color-text-primary));
+  font-family: var(--font-sans);
+  letter-spacing: 0;
+}
+
+.fontBase {
+  font-family: var(--font-sans);
+}
+
+.fontMono {
+  font-family: var(--font-mono);
+}
+
+.display {
+  font-size: var(--text-display-size);
+  font-weight: var(--text-display-weight);
+  line-height: var(--text-display-line);
+}
+
+.h1 {
+  font-size: var(--text-h1-size);
+  font-weight: var(--text-h1-weight);
+  line-height: var(--text-h1-line);
+}
+
+.h2 {
+  font-size: var(--text-h2-size);
+  font-weight: var(--text-h2-weight);
+  line-height: var(--text-h2-line);
+}
+
+.h3 {
+  font-size: 24px;
+  font-weight: var(--text-h3-weight);
+  line-height: var(--text-h3-line);
+}
+
+.xl {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.lg {
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.base {
+  font-size: var(--text-body-size);
+  font-weight: var(--text-body-weight);
+  line-height: var(--text-body-line);
+}
+
+.md {
+  font-size: 16px;
+  line-height: 1.45;
+}
+
+.sm {
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.xs {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.weight400 {
+  font-weight: 400;
+}
+
+.weight500 {
+  font-weight: 500;
+}
+
+.weight600 {
+  font-weight: 600;
+}
+
+.weight700 {
+  font-weight: 700;
+}
+
+.weight800 {
+  font-weight: 800;
+}
+
+.weight900 {
+  font-weight: 900;
+}
+
+.primary {
+  --typograph-color: var(--color-text-primary);
+}
+
+.secondary {
+  --typograph-color: var(--color-text-secondary);
+}
+
+.muted {
+  --typograph-color: var(--color-text-muted);
+}
+
+.inverse {
+  --typograph-color: var(--color-text-inverse);
+}
+
+.success {
+  --typograph-color: var(--color-success);
+}
+
+.error {
+  --typograph-color: var(--color-error);
+}
+
+.inherit {
+  --typograph-color: currentColor;
+}

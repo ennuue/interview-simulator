@@ -1,0 +1,398 @@
+/* ============================================================
+   DESIGN TOKENS
+   ======================================================= */
+
+:root {
+
+  /* ============================================================
+     1. ШРИФТЫ
+     ============================================================ */
+
+  /* Основной шрифт интерфейса.
+     Применяется: ВЕЗДЕ (заголовки, body, кнопки, поля).
+     Источник: Google Fonts → Inter, вес 400–900. */
+  --font-sans: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+
+  /* Моноширинный шрифт.
+     Применяется: подписи-eyebrow (например «— 02 / профессии»),
+     меточки-таймеры, мини-нумерация «01 / 03», кнопка-табы в стиле «01 Snap».
+     Источник: Google Fonts → JetBrains Mono, вес 500. */
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Веса шрифта */
+  --font-weight-regular:  400;
+  --font-weight-medium:   500;
+  --font-weight-semibold: 600;
+  --font-weight-bold:     700;
+  --font-weight-extrabold: 800;
+  --font-weight-black:    900;
+
+  /* ============================================================
+     2. ТИПОГРАФИЧЕСКАЯ ШКАЛА
+     ============================================================ */
+
+  /* Display — для hero-заголовка лендинга
+     («Подготовься к техническому собеседованию»). */
+  --text-display-size:    clamp(48px, 6.5vw, 88px);
+  --text-display-line:    0.98;
+  --text-display-track:   -0.045em;     /* letter-spacing */
+  --text-display-weight:  var(--font-weight-black);
+
+  /* H1 — крупные заголовки секций
+     («Выберите профессию», «Один вопрос — один разбор»). */
+  --text-h1-size:    clamp(40px, 4.5vw, 64px);
+  --text-h1-line:    1.02;
+  --text-h1-track:   -0.04em;
+  --text-h1-weight:  var(--font-weight-black);
+
+  /* H2 — подзаголовки, шапки карточек профессий. */
+  --text-h2-size:    clamp(28px, 3vw, 40px);
+  --text-h2-line:    1.08;
+  --text-h2-track:   -0.03em;
+  --text-h2-weight:  var(--font-weight-black);
+
+  /* H3 — заголовки внутри карточек, состояний, мини-секций. */
+  --text-h3-size:    23px;
+  --text-h3-line:    1.2;
+  --text-h3-track:   -0.02em;
+  --text-h3-weight:  var(--font-weight-extrabold);
+
+  /* Body — основной текст, описания, параграфы. */
+  --text-body-size:    18px;
+  --text-body-line:    1.55;
+  --text-body-weight:  var(--font-weight-regular);
+
+  /* Body small — пояснения, подписи под заголовками. */
+  --text-body-sm-size:    15px;
+  --text-body-sm-line:    1.55;
+  --text-body-sm-weight:  var(--font-weight-regular);
+
+  /* Mono — eyebrow-подписи, нумерация, мета-инфа.
+     Применяется с font-family: var(--font-mono). */
+  --text-mono-size:    12px;
+  --text-mono-line:    1.4;
+  --text-mono-track:   0.02em;          /* небольшой spacing */
+  --text-mono-weight:  var(--font-weight-medium);
+  --text-mono-case:    uppercase;        /* text-transform */
+
+  /* ============================================================
+     3. ЦВЕТА — BRAND / PRIMARY
+     ============================================================ */
+
+  /* Основной бренд-цвет.
+     Применяется: primary-кнопки, активные вкладки, ссылки,
+     активный radio, прогресс-бар, иконки в карточках. */
+  --color-primary:        #2563eb;
+
+  /* Primary при наведении / активном клике на кнопку. */
+  --color-primary-hover:  #1d4ed8;
+
+  /* Поверхности на синем brand-фоне. */
+  --color-primary-on-surface: rgba(255, 255, 255, 0.09);
+  --color-primary-on-surface-border: rgba(255, 255, 255, 0.16);
+  --color-primary-on-soft: rgba(255, 255, 255, 0.2);
+  --color-primary-on-muted: rgba(255, 255, 255, 0.72);
+
+  /* Светлый фон для primary-областей: выбранный ответ,
+     active radio-карточка, tag/pill в hero. */
+  --color-primary-soft:   #eff6ff;
+
+  /* Чуть более насыщенный soft — для hover на soft-областях. */
+  --color-primary-soft-2: #dbeafe;
+
+  /* Граница primary-soft областей (рамка tag, hover-карточки). */
+  --color-primary-border: #bfdbfe;
+
+  /* ============================================================
+     4. ЦВЕТА — НЕЙТРАЛЬНЫЕ ФОНЫ
+     ============================================================ */
+
+  /* Основной фон страницы (светлая тема). */
+  --color-bg:    #f8fafc;
+
+  /* Альтернативный фон — чередующиеся секции, sidebar. */
+  --color-bg-2: #f1f5f9;
+
+  /* Фон карточек и поверхностей поверх bg. */
+  --color-surface: #ffffff;
+
+  /* ============================================================
+     5. ЦВЕТА — ТЕКСТ
+     ============================================================ */
+
+  /* Основной текст — заголовки, имена, важные значения. */
+  --color-text-primary:   #0f172a;
+
+  /* Вторичный текст — описания, body-параграфы. */
+  --color-text-secondary: #475569;
+
+  /* Третичный — подписи, метки, выключенные состояния. */
+  --color-text-muted:     #64748b;
+
+  /* Текст на тёмном фоне (Magazine, Stacked dark). */
+  --color-text-inverse:   #ffffff;
+
+  /* ============================================================
+     6. ЦВЕТА — ГРАНИЦЫ
+     ============================================================ */
+
+  /* Основная граница карточек, полей ввода. */
+  --color-border:       #d9e2ec;
+
+  /* Светлая граница (внутренние блоки, чек-листы). */
+  --color-border-soft:  #e2e8f0;
+
+  /* Граница на тёмных фонах (магазин-вариант). */
+  --color-border-dark:  rgba(255, 255, 255, 0.12);
+
+  /* ============================================================
+     7. ЦВЕТА — СЕМАНТИКА (СОСТОЯНИЯ)
+     ============================================================ */
+
+  /* Success — верный ответ, чек-марки в чек-листе. */
+  --color-success:        #16a34a;
+  --color-success-soft:   #dcfce7;
+  --color-success-border: #bbf7d0;
+
+  /* Error — неверный ответ, ошибка ввода. */
+  --color-error:        #dc2626;
+  --color-error-soft:   #fee2e2;
+  --color-error-border: #fecaca;
+
+  /* Warning — toast «выберите ответ». */
+  --color-warning:        #92400e;
+  --color-warning-soft:   #fef3c7;
+  --color-warning-border: #fde68a;
+
+  /* ============================================================
+     8. ЦВЕТА — MAGAZINE / ТЁМНАЯ ТЕМА
+     Используется в Magazine-варианте лендинга.
+     ============================================================ */
+
+  --color-dark-bg:       #0a0d14;        /* фон страницы */
+  --color-dark-card:     #171f2e;
+  --color-dark-card-hover: #1b2436;
+  --color-dark-surface:  rgba(255, 255, 255, 0.025); /* карточки */
+  --color-dark-text:     #ffffff;
+  --color-dark-muted:    rgba(255, 255, 255, 0.6);
+  --color-dark-subtle:   rgba(255, 255, 255, 0.34);
+  --color-dark-meta:     rgba(255, 255, 255, 0.52);
+  --color-dark-border:   rgba(255, 255, 255, 0.08);
+  --color-dark-border-hover: rgba(255, 255, 255, 0.16);
+
+  /* Голубой акцент-градиент для крупных слов («по-крупному»). */
+  --color-accent-blue-light:  #60a5fa;
+  --color-accent-blue:        #2563eb;
+  --color-accent-blue-dark:   #1d4ed8;
+
+  /* Фиолетовый акцент (Backend-карточка, parallax-блоб). */
+  --color-accent-purple:      #a855f7;
+  --color-accent-purple-soft: #fae8ff;
+
+  /* Акцентные подложки для тёмных карточек направлений. */
+  --color-accent-blue-soft-dark:   rgba(37, 99, 235, 0.14);
+  --color-accent-blue-border-dark: rgba(96, 165, 250, 0.34);
+  --color-accent-green:           #22c55e;
+  --color-accent-green-soft-dark:  rgba(34, 197, 94, 0.14);
+  --color-accent-green-border-dark: rgba(34, 197, 94, 0.28);
+  --color-accent-purple-soft-dark: rgba(168, 85, 247, 0.16);
+  --color-accent-purple-border-dark: rgba(168, 85, 247, 0.32);
+
+  /* ============================================================
+     9. РАДИУСЫ
+     ============================================================ */
+
+  /* Маленький — pill-кнопки, бейджи внутри. */
+  --radius-pill: 999px;
+
+  /* Поля ввода, ответы в тесте. */
+  --radius-input: 14px;
+
+  /* Кнопки primary/secondary. */
+  --radius-button: 14px;
+
+  /* Стандартные карточки (профессии, инструкции). */
+  --radius-card: 26px;
+
+  /* Большие карточки (preview в hero, главные блоки). */
+  --radius-card-lg: 28px;
+
+  /* Очень большие — карточки в horizontal-варианте, stacked-секции. */
+  --radius-card-xl: 32px;
+
+  /* Радиус «карточки» сверху для stacked-секций. */
+  --radius-stack-top: 36px;
+
+  /* ============================================================
+     10. ОТСТУПЫ — СЕТКА
+     ============================================================ */
+
+  /* Внутренний отступ страницы (горизонтальный). */
+  --space-page-x: clamp(20px, 7vw, 96px);
+
+  /* Внутренний отступ страницы (вертикальный). */
+  --space-page-y: clamp(80px, 12vh, 140px);
+
+  /* Зазор между крупными блоками. */
+  --space-section: 60px;
+
+  /* Зазор между карточками в строке. */
+  --space-card-gap: 28px;
+
+  /* Внутренние отступы карточки. */
+  --space-card-pad: 32px;
+
+  /* ============================================================
+     11. ТЕНИ
+     ============================================================ */
+
+  /* Тонкая тень для приподнятых карточек. */
+  --shadow-card:
+    0 8px 28px -12px rgba(15, 23, 42, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.6) inset;
+
+  /* Глубокая тень — для hero-preview, top-карточек stacked. */
+  --shadow-card-deep:
+    0 30px 60px -30px rgba(15, 23, 42, 0.18);
+
+  /* Тень primary-кнопки (синий blur). */
+  --shadow-button:
+    0 8px 20px -8px rgba(37, 99, 235, 0.6);
+
+  /* Тень секции stacked (вверху, в виде «приподнялось»). */
+  --shadow-stack-section:
+    0 -28px 60px -28px rgba(15, 23, 42, 0.18);
+
+  /* ============================================================
+     12. ВРЕМЕНА / EASING
+     ============================================================ */
+
+  /* Мгновенные ховеры — кнопки, ссылки. */
+  --duration-fast: 150ms;
+
+  /* Стандартные переходы — карточки, фокусы. */
+  --duration-base: 250ms;
+
+  /* Появление контента, переходы между вопросами. */
+  --duration-slow: 550ms;
+
+  /* Длинные scroll-reveal эффекты. */
+  --duration-reveal: 800ms;
+
+  /* Стандартный easing для UI. */
+  --ease-out:    cubic-bezier(.2, .7, .2, 1);
+
+  /* Более «упругий» для появления контента. */
+  --ease-reveal: cubic-bezier(.2, .7, .15, 1);
+
+  /* Для переходов вопросов в тесте (вход / выход). */
+  --ease-card:   cubic-bezier(.6, .0, .2, 1);
+
+  /* ============================================================
+     13. LAYOUT — INTERVIEW FLOW
+     ============================================================ */
+
+  /* Общий layout страниц теста и результата. */
+  --interview-layout-sidebar-width: 320px;
+  --interview-layout-sidebar-padding-top: 80px;
+  --interview-layout-sidebar-padding-inline: 24px;
+  --interview-layout-sidebar-padding-bottom: 32px;
+  --interview-layout-content-padding-top: 80px;
+  --interview-layout-content-padding-inline: 34px;
+  --interview-layout-content-padding-bottom: 42px;
+  --interview-layout-content-gap: 24px;
+
+  /* Mobile-отступы для страниц теста и результата. */
+  --interview-layout-content-padding-mobile-y: 24px;
+  --interview-layout-content-padding-mobile-x: 18px;
+
+  /* Страница вопроса. */
+  --interview-question-header-padding-bottom: 28px;
+  --interview-question-card-padding: 36px 30px 28px;
+  --interview-question-card-padding-mobile: 24px 18px;
+
+  /* Страница результата. */
+  --interview-result-header-margin-bottom: 54px;
+  --interview-result-grid-gap: 20px;
+  --interview-result-card-header-margin-bottom: 26px;
+  --interview-result-topic-row-gap: 18px;
+  --interview-result-topic-row-padding-bottom: 16px;
+  --interview-result-repeat-list-gap: 12px;
+  --interview-result-repeat-item-padding: 22px;
+
+  /* ============================================================
+     14. Z-INDEX
+     ============================================================ */
+
+  --z-base:    1;
+  --z-sticky:  10;
+  --z-overlay: 40;
+  --z-nav:     50;
+  --z-modal:   100;
+}
+
+
+/* ============================================================
+   ВСПОМОГАТЕЛЬНЫЕ КЛАССЫ
+   Не обязательны — но удобно, если не пишешь через CSS-модули.
+   ============================================================ */
+
+.text-display {
+  font-family: var(--font-sans);
+  font-size: var(--text-display-size);
+  line-height: var(--text-display-line);
+  letter-spacing: var(--text-display-track);
+  font-weight: var(--text-display-weight);
+  margin: 0;
+}
+
+.text-h1 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h1-size);
+  line-height: var(--text-h1-line);
+  letter-spacing: var(--text-h1-track);
+  font-weight: var(--text-h1-weight);
+  margin: 0;
+}
+
+.text-h2 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h2-size);
+  line-height: var(--text-h2-line);
+  letter-spacing: var(--text-h2-track);
+  font-weight: var(--text-h2-weight);
+  margin: 0;
+}
+
+.text-h3 {
+  font-family: var(--font-sans);
+  font-size: var(--text-h3-size);
+  line-height: var(--text-h3-line);
+  letter-spacing: var(--text-h3-track);
+  font-weight: var(--text-h3-weight);
+  margin: 0;
+}
+
+.text-body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-size);
+  line-height: var(--text-body-line);
+  color: var(--color-text-secondary);
+}
+
+.text-body-sm {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm-size);
+  line-height: var(--text-body-sm-line);
+  color: var(--color-text-muted);
+}
+
+.text-mono {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-size);
+  line-height: var(--text-mono-line);
+  letter-spacing: var(--text-mono-track);
+  text-transform: var(--text-mono-case);
+  font-weight: var(--text-mono-weight);
+  color: var(--color-text-muted);
+}

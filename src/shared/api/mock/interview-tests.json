@@ -1,0 +1,536 @@
+[
+  {
+    "professionId": "frontend",
+    "professionTitle": "Frontend-разработчик",
+    "level": "junior",
+    "estimatedMinutes": 10,
+    "questions": [
+      {
+        "id": "frontend-css-position",
+        "order": 1,
+        "topic": "CSS",
+        "type": "single",
+        "title": "Какое значение свойства position заставляет элемент позиционироваться относительно его нормального положения, но при этом не вырывает его из потока?",
+        "options": [
+          { "id": "absolute", "text": "absolute" },
+          { "id": "relative", "text": "relative" },
+          { "id": "fixed", "text": "fixed" },
+          { "id": "static", "text": "static" }
+        ],
+        "correctAnswer": "relative",
+        "hint": "Это значение не вырывает элемент из потока, но позволяет сдвигать его относительно исходной позиции.",
+        "explanation": "position: relative — элемент остаётся в потоке, но смещается относительно своего нормального положения.",
+        "references": [
+          {
+            "title": "MDN: position",
+            "url": "https://developer.mozilla.org/ru/docs/Web/CSS/position"
+          }
+        ]
+      },
+      {
+        "id": "frontend-styling-tech",
+        "order": 2,
+        "topic": "Вёрстка",
+        "type": "multiple",
+        "title": "Какие из перечисленных технологий используются для стилизации и работы с интерфейсом на клиентской стороне?",
+        "options": [
+          { "id": "sql", "text": "SQL" },
+          { "id": "css", "text": "CSS" },
+          { "id": "wasm", "text": "WebAssembly" },
+          { "id": "sass", "text": "SASS/SCSS" }
+        ],
+        "correctAnswer": ["css", "sass"],
+        "hint": "Это языки и технологии, которые напрямую влияют на внешний вид интерфейса в браузере.",
+        "explanation": "CSS и SASS/SCSS используются для стилизации. WebAssembly — для вычислений, SQL — для баз данных.",
+        "references": [
+          {
+            "title": "MDN: CSS",
+            "url": "https://developer.mozilla.org/ru/docs/Web/CSS"
+          }
+        ]
+      },
+      {
+        "id": "frontend-html-match",
+        "order": 3,
+        "topic": "HTML",
+        "type": "match",
+        "title": "Сопоставьте HTML-тег с его типичным назначением",
+        "options": [
+          { "id": "section", "text": "<section>" },
+          { "id": "article", "text": "<article>" },
+          { "id": "nav", "text": "<nav>" },
+          { "id": "aside", "text": "<aside>" }
+        ],
+        "correctAnswer": {
+          "section": "group",
+          "article": "content",
+          "nav": "navigation",
+          "aside": "sidebar"
+        },
+        "matchPairs": [
+          { "value": "group", "label": "Группировка тематически связанного контента" },
+          { "value": "content", "label": "Логически независимый контент (новость, пост)" },
+          { "value": "navigation", "label": "Основная навигация по сайту" },
+          { "value": "sidebar", "label": "Содержимое, не связанное напрямую с основным контентом (сайдбар)" }
+        ],
+        "hint": "Вспомните семантические теги HTML5.",
+        "explanation": "<section> — группа по теме, <article> — независимый контент, <nav> — навигация, <aside> — побочный контент.",
+        "references": [
+          {
+            "title": "MDN: Семантические элементы",
+            "url": "https://developer.mozilla.org/ru/docs/Web/HTML/Element"
+          }
+        ]
+      },
+      {
+        "id": "frontend-typeof-null",
+        "order": 4,
+        "topic": "JavaScript",
+        "type": "text",
+        "title": "Что выведет в консоль следующий код? console.log(typeof null);",
+        "correctAnswer": ["object"],
+        "hint": "Формат ответа: одно английское слово, строчными буквами.",
+        "explanation": "typeof null возвращает 'object' — это официально признанная ошибка в языке, сохранённая для обратной совместимости.",
+        "references": [
+          {
+            "title": "MDN: typeof",
+            "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/typeof"
+          }
+        ]
+      },
+      {
+        "id": "frontend-array-filter",
+        "order": 5,
+        "topic": "JavaScript",
+        "type": "single",
+        "title": "Какой метод массива в JavaScript создаёт новый массив с элементами, прошедшими проверку заданной функции?",
+        "options": [
+          { "id": "foreach", "text": "forEach()" },
+          { "id": "map", "text": "map()" },
+          { "id": "filter", "text": "filter()" },
+          { "id": "reduce", "text": "reduce()" }
+        ],
+        "correctAnswer": "filter",
+        "hint": "Этот метод возвращает новый массив с отфильтрованными элементами.",
+        "explanation": "filter() создаёт новый массив со всеми элементами, для которых колбэк вернул true.",
+        "references": [
+          {
+            "title": "MDN: Array.filter",
+            "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Array/filter"
+          }
+        ]
+      },
+      {
+        "id": "frontend-event-loop",
+        "order": 6,
+        "topic": "JavaScript",
+        "type": "multiple",
+        "title": "Какие из утверждений об Event Loop в JavaScript верны?",
+        "options": [
+          { "id": "timeout", "text": "setTimeout(cb, 0) выполнится до окончания синхронного кода" },
+          { "id": "promises-timers", "text": "Промисы обрабатываются в фазе таймеров" },
+          { "id": "microtasks", "text": "Микрозадачи (microtasks) выполняются после каждого колбэка макрозадачи" },
+          { "id": "raf", "text": "requestAnimationFrame гарантированно выполняется строго каждые 100 мс" }
+        ],
+        "correctAnswer": ["timeout", "microtasks"],
+        "hint": "Вспомните порядок выполнения макро- и микрозадач.",
+        "explanation": "setTimeout с 0 — макрозадача, выполняется после синхронного кода. Микрозадачи (промисы) — после каждой макрозадачи.",
+        "references": [
+          {
+            "title": "MDN: Event Loop",
+            "url": "https://developer.mozilla.org/ru/docs/Web/JavaScript/EventLoop"
+          }
+        ]
+      },
+      {
+        "id": "frontend-input-attributes",
+        "order": 7,
+        "topic": "HTML",
+        "type": "match",
+        "title": "Соотнесите атрибут тега <input> с его действием",
+        "options": [
+          { "id": "required", "text": "required" },
+          { "id": "email", "text": "type=\"email\"" },
+          { "id": "pattern", "text": "pattern" },
+          { "id": "disabled", "text": "disabled" }
+        ],
+        "correctAnswer": {
+          "required": "required-action",
+          "email": "email-action",
+          "pattern": "pattern-action",
+          "disabled": "disabled-action"
+        },
+        "matchPairs": [
+          { "value": "required-action", "label": "Поле обязательно для заполнения" },
+          { "value": "email-action", "label": "Встроенная валидация формата email" },
+          { "value": "pattern-action", "label": "Проверка ввода по регулярному выражению" },
+          { "value": "disabled-action", "label": "Поле неактивно и не отправляется на сервер" }
+        ],
+        "hint": "Вспомните атрибуты валидации форм.",
+        "explanation": "required — обязательность, type=email — проверка email, pattern — regex, disabled — блокировка.",
+        "references": [
+          {
+            "title": "MDN: input атрибуты",
+            "url": "https://developer.mozilla.org/ru/docs/Web/HTML/Element/input"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "professionId": "backend",
+    "professionTitle": "Backend-разработчик",
+    "level": "junior",
+    "estimatedMinutes": 10,
+    "questions": [
+      {
+        "id": "backend-http-idempotent",
+        "order": 1,
+        "topic": "HTTP",
+        "type": "single",
+        "title": "Какой HTTP-метод считается идемпотентным по спецификации RFC 9110?",
+        "options": [
+          { "id": "post", "text": "POST" },
+          { "id": "patch", "text": "PATCH" },
+          { "id": "delete", "text": "DELETE" },
+          { "id": "connect", "text": "CONNECT" }
+        ],
+        "correctAnswer": "delete",
+        "hint": "Идемпотентность — повторный запрос даёт тот же результат.",
+        "explanation": "DELETE идемпотентен: повторный вызов не меняет состояние (ресурс уже удалён).",
+        "references": [
+          {
+            "title": "RFC 9110: HTTP Semantics",
+            "url": "https://httpwg.org/specs/rfc9110.html"
+          }
+        ]
+      },
+      {
+        "id": "backend-nosql",
+        "order": 2,
+        "topic": "Базы данных",
+        "type": "multiple",
+        "title": "Какие из перечисленных баз данных относятся к NoSQL?",
+        "options": [
+          { "id": "pg", "text": "PostgreSQL" },
+          { "id": "mongo", "text": "MongoDB" },
+          { "id": "redis", "text": "Redis" },
+          { "id": "mysql", "text": "MySQL" }
+        ],
+        "correctAnswer": ["mongo", "redis"],
+        "hint": "NoSQL — нереляционные базы данных.",
+        "explanation": "MongoDB (документо-ориентированная) и Redis (key-value) — NoSQL. PostgreSQL и MySQL — реляционные.",
+        "references": [
+          {
+            "title": "Что такое NoSQL",
+            "url": "https://www.mongodb.com/nosql-explained"
+          }
+        ]
+      },
+      {
+        "id": "backend-transaction-isolation",
+        "order": 3,
+        "topic": "Базы данных",
+        "type": "match",
+        "title": "Соотнесите уровень изоляции транзакций с его эффектом",
+        "options": [
+          { "id": "read-uncommitted", "text": "Read Uncommitted" },
+          { "id": "repeatable-read", "text": "Repeatable Read" },
+          { "id": "serializable", "text": "Serializable" },
+          { "id": "read-committed", "text": "Read Committed" }
+        ],
+        "correctAnswer": {
+          "read-uncommitted": "dirty-read",
+          "repeatable-read": "no-phantom",
+          "serializable": "full-isolation",
+          "read-committed": "no-dirty"
+        },
+        "matchPairs": [
+          { "value": "dirty-read", "label": "Грязное чтение возможно" },
+          { "value": "no-phantom", "label": "Фантомное чтение невозможно" },
+          { "value": "full-isolation", "label": "Полная изоляция, эмулирует последовательное выполнение" },
+          { "value": "no-dirty", "label": "Грязное чтение запрещено" }
+        ],
+        "hint": "Уровни изоляции от самого слабого к строгому.",
+        "explanation": "Read Uncommitted — грязные чтения. Read Committed — их нет. Repeatable Read — защита от неповторяющегося чтения. Serializable — максимальная изоляция.",
+        "references": [
+          {
+            "title": "PostgreSQL: Уровни изоляции",
+            "url": "https://www.postgresql.org/docs/current/transaction-iso.html"
+          }
+        ]
+      },
+      {
+        "id": "backend-http-401",
+        "order": 4,
+        "topic": "HTTP",
+        "type": "text",
+        "title": "Какой код состояния HTTP возвращается сервером, если клиент не авторизован? (Напишите число или стандартное название)",
+        "correctAnswer": ["401", "unauthorized", "401 unauthorized"],
+        "hint": "Формат ответа: число, английское название статуса или число + английское название.",
+        "explanation": "401 Unauthorized означает, что запрос требует аутентификации пользователя.",
+        "references": [
+          {
+            "title": "MDN: 401 Unauthorized",
+            "url": "https://developer.mozilla.org/ru/docs/Web/HTTP/Status/401"
+          }
+        ]
+      },
+      {
+        "id": "backend-reverse-proxy",
+        "order": 5,
+        "topic": "Архитектура",
+        "type": "single",
+        "title": "Что из перечисленного является типичной задачей обратного прокси (reverse proxy) в бэкенд-архитектуре?",
+        "options": [
+          { "id": "cache", "text": "Кэширование статики" },
+          { "id": "load-balance", "text": "Балансировка нагрузки" },
+          { "id": "ws-translate", "text": "Трансляция WebSocket в HTTP" },
+          { "id": "db-write", "text": "Прямая запись в базу данных" }
+        ],
+        "correctAnswer": "load-balance",
+        "hint": "Reverse proxy часто распределяет трафик между несколькими серверами.",
+        "explanation": "Балансировка нагрузки — одна из ключевых задач reverse proxy (nginx, haproxy).",
+        "references": [
+          {
+            "title": "NGINX: Reverse proxy",
+            "url": "https://nginx.org/ru/docs/beginners_guide.html#proxy"
+          }
+        ]
+      },
+      {
+        "id": "backend-rest-api",
+        "order": 6,
+        "topic": "API",
+        "type": "multiple",
+        "title": "Какие из утверждений о REST API верны?",
+        "options": [
+          { "id": "url-id", "text": "Ресурс идентифицируется URL" },
+          { "id": "state", "text": "Состояние клиента обязательно хранится на сервере между запросами" },
+          { "id": "methods", "text": "Использование HTTP-методов (GET, POST, PUT, DELETE) является рекомендацией" },
+          { "id": "put-patch", "text": "PUT заменяет ресурс целиком, PATCH — частично" }
+        ],
+        "correctAnswer": ["url-id", "methods", "put-patch"],
+        "hint": "В REST клиент не должен хранить состояние на сервере между запросами.",
+        "explanation": "REST требует stateless, идентификацию через URL, использование HTTP-методов. PUT — полная замена, PATCH — частичное обновление.",
+        "references": [
+          {
+            "title": "REST API Tutorial",
+            "url": "https://restfulapi.net/"
+          }
+        ]
+      },
+      {
+        "id": "backend-sql-match",
+        "order": 7,
+        "topic": "SQL",
+        "type": "match",
+        "title": "Соотнесите команду SQL с её действием",
+        "options": [
+          { "id": "inner-join", "text": "INNER JOIN" },
+          { "id": "left-join", "text": "LEFT JOIN" },
+          { "id": "group-by", "text": "GROUP BY" },
+          { "id": "having", "text": "HAVING" }
+        ],
+        "correctAnswer": {
+          "inner-join": "inner-action",
+          "left-join": "left-action",
+          "group-by": "group-action",
+          "having": "having-action"
+        },
+        "matchPairs": [
+          { "value": "inner-action", "label": "Только совпадающие строки из двух таблиц" },
+          { "value": "left-action", "label": "Все строки из левой таблицы + совпадения из правой" },
+          { "value": "group-action", "label": "Группировка строк с одинаковыми значениями" },
+          { "value": "having-action", "label": "Условие для агрегированных данных (после GROUP BY)" }
+        ],
+        "hint": "Вспомните JOIN, GROUP BY и HAVING.",
+        "explanation": "INNER JOIN — пересечение, LEFT JOIN — левая + совпадения, GROUP BY — группировка, HAVING — фильтр после группировки.",
+        "references": [
+          {
+            "title": "SQL Tutorial",
+            "url": "https://www.w3schools.com/sql/"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "professionId": "qa",
+    "professionTitle": "Тестировщик",
+    "level": "junior",
+    "estimatedMinutes": 10,
+    "questions": [
+      {
+        "id": "qa-static-testing",
+        "order": 1,
+        "topic": "Методы тестирования",
+        "type": "single",
+        "title": "Какой метод тестирования выполняется без исполнения кода продукта?",
+        "options": [
+          { "id": "functional", "text": "Функциональное тестирование" },
+          { "id": "load", "text": "Нагрузочное тестирование" },
+          { "id": "static", "text": "Статическое тестирование" },
+          { "id": "integration", "text": "Интеграционное тестирование" }
+        ],
+        "correctAnswer": "static",
+        "hint": "Статический анализ, ревью кода, проверка требований.",
+        "explanation": "Статическое тестирование — анализ артефактов без запуска кода (обзоры, инспекции, статический анализ).",
+        "references": [
+          {
+            "title": "ISTQB: Статическое тестирование",
+            "url": "https://www.istqb.org/"
+          }
+        ]
+      },
+      {
+        "id": "qa-artifacts",
+        "order": 2,
+        "topic": "Артефакты тестирования",
+        "type": "multiple",
+        "title": "Что из перечисленного относится к артефактам тестирования?",
+        "options": [
+          { "id": "test-plan", "text": "Тест-план" },
+          { "id": "source-code", "text": "Исходный код приложения" },
+          { "id": "checklist", "text": "Чек-лист" },
+          { "id": "bug-report", "text": "Баг-репорт" }
+        ],
+        "correctAnswer": ["test-plan", "checklist", "bug-report"],
+        "hint": "Артефакты — документы, создаваемые в процессе тестирования.",
+        "explanation": "Тест-план, чек-лист, баг-репорт — ключевые артефакты тестирования. Исходный код — артефакт разработки.",
+        "references": [
+          {
+            "title": "Артефакты тестирования",
+            "url": "https://www.atlassian.com/software/jira"
+          }
+        ]
+      },
+      {
+        "id": "qa-test-types",
+        "order": 3,
+        "topic": "Типы тестирования",
+        "type": "match",
+        "title": "Соотнесите тип тестирования с его описанием",
+        "options": [
+          { "id": "smoke", "text": "Smoke testing" },
+          { "id": "sanity", "text": "Sanity testing" },
+          { "id": "regression", "text": "Regression testing" },
+          { "id": "acceptance", "text": "Acceptance testing" }
+        ],
+        "correctAnswer": {
+          "smoke": "smoke-desc",
+          "sanity": "sanity-desc",
+          "regression": "regression-desc",
+          "acceptance": "acceptance-desc"
+        },
+        "matchPairs": [
+          { "value": "smoke-desc", "label": "Минимальный набор тестов для проверки критических функций (после сборки)" },
+          { "value": "sanity-desc", "label": "Проверка разумности работы новой функциональности без глубокого тестирования" },
+          { "value": "regression-desc", "label": "Проверка, что новые изменения не сломали старую функциональность" },
+          { "value": "acceptance-desc", "label": "Тестирование на соответствие требованиям заказчика" }
+        ],
+        "hint": "Smoke — дымовое, sanity — санитарное, regression — регрессионное, acceptance — приёмочное.",
+        "explanation": "Smoke — критический минимум, sanity — поверхностная проверка новой фичи, regression — старый функционал не сломан, acceptance — соответствие требованиям.",
+        "references": [
+          {
+            "title": "Типы тестирования",
+            "url": "https://www.atlassian.com/continuous-delivery/software-testing"
+          }
+        ]
+      },
+      {
+        "id": "qa-test-case",
+        "order": 4,
+        "topic": "Тест-дизайн",
+        "type": "text",
+        "title": "Как называется документ, в котором подробно описаны шаги, входные данные, ожидаемый и фактический результат для одного тестового сценария? (Одно слово или аббревиатура)",
+        "correctAnswer": ["тест-кейс", "тест кейс", "test case", "tc"],
+        "hint": "Формат ответа: термин на русском в нижнем регистре, английский термин или аббревиатура.",
+        "explanation": "Тест-кейс (test case) — основной артефакт для описания тестового сценария.",
+        "references": [
+          {
+            "title": "Test Case",
+            "url": "https://www.guru99.com/test-case.html"
+          }
+        ]
+      },
+      {
+        "id": "qa-v-model",
+        "order": 5,
+        "topic": "Процессы тестирования",
+        "type": "single",
+        "title": "Какой уровень тестирования первым выполняется после передачи кода в тестирование (согласно V-модели)?",
+        "options": [
+          { "id": "system", "text": "Системное тестирование" },
+          { "id": "unit", "text": "Модульное тестирование" },
+          { "id": "integration", "text": "Интеграционное тестирование" },
+          { "id": "acceptance", "text": "Приемочное тестирование" }
+        ],
+        "correctAnswer": "unit",
+        "hint": "Самый низкий уровень — тестирование отдельных компонентов.",
+        "explanation": "В V-модели после кодирования сразу выполняется модульное тестирование (unit testing).",
+        "references": [
+          {
+            "title": "V-Model",
+            "url": "https://www.softwaretestinghelp.com/v-model-in-software-testing/"
+          }
+        ]
+      },
+      {
+        "id": "qa-blackbox",
+        "order": 6,
+        "topic": "Техники тест-дизайна",
+        "type": "multiple",
+        "title": "Какие из этих техник относятся к техникам тест-дизайна (black-box)?",
+        "options": [
+          { "id": "boundary", "text": "Анализ граничных значений" },
+          { "id": "coverage", "text": "Покрытие кода (code coverage)" },
+          { "id": "equivalence", "text": "Классы эквивалентности" },
+          { "id": "pairwise", "text": "Попарное тестирование" }
+        ],
+        "correctAnswer": ["boundary", "equivalence", "pairwise"],
+        "hint": "Black-box — без знания внутренней структуры кода.",
+        "explanation": "Граничные значения, классы эквивалентности, попарное тестирование — классические black-box техники. Покрытие кода — white-box.",
+        "references": [
+          {
+            "title": "Black-box техники",
+            "url": "https://www.softwaretestinghelp.com/black-box-testing/"
+          }
+        ]
+      },
+      {
+        "id": "qa-bug-report-fields",
+        "order": 7,
+        "topic": "Баг-репорты",
+        "type": "match",
+        "title": "Соотнесите поле стандартного баг-репорта с его содержимым",
+        "options": [
+          { "id": "steps", "text": "Шаги воспроизведения" },
+          { "id": "expected", "text": "Ожидаемый результат" },
+          { "id": "actual", "text": "Фактический результат" },
+          { "id": "severity", "text": "Серьезность (Severity)" }
+        ],
+        "correctAnswer": {
+          "steps": "steps-desc",
+          "expected": "expected-desc",
+          "actual": "actual-desc",
+          "severity": "severity-desc"
+        },
+        "matchPairs": [
+          { "value": "steps-desc", "label": "Точная последовательность действий для воспроизведения ошибки" },
+          { "value": "expected-desc", "label": "Как должно работать по спецификации" },
+          { "value": "actual-desc", "label": "Что произошло на самом деле" },
+          { "value": "severity-desc", "label": "Критическая / Блокирующая / Незначительная" }
+        ],
+        "hint": "Стандартные поля баг-репорта в Jira/YouTrack.",
+        "explanation": "Шаги воспроизведения, ожидаемый/фактический результат, серьёзность — обязательные поля качественного баг-репорта.",
+        "references": [
+          {
+            "title": "Как писать баг-репорты",
+            "url": "https://www.atlassian.com/agile/software-development/bug-report"
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+.root {
+  width: 100%;
+  min-height: 58px;
+  padding: 0 18px;
+  border: 1px solid var(--input-border-color);
+  border-radius: 14px;
+  color: var(--color-text-primary);
+  background: var(--color-surface);
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.4;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.root:hover:not(.disabled) {
+  --input-border-color: var(--color-primary);
+}
+
+.root.focused {
+  --input-border-color: var(--color-primary-hover);
+}
+
+.root.error {
+  --input-border-color: var(--color-error);
+}
+
+.root.disabled {
+  color: var(--color-text-muted);
+  background: var(--color-bg-2);
+  cursor: not-allowed;
+}
+
+.root input {
+  height: auto;
+  padding: 0;
+}
+
+.root input::placeholder {
+  color: var(--color-text-muted);
+  font-weight: 700;
+  opacity: 1;
+}
+
+.root input:disabled {
+  cursor: not-allowed;
+  -webkit-text-fill-color: var(--color-text-muted);
+}
+
+.default {
+  --input-border-color: var(--color-border);
+}

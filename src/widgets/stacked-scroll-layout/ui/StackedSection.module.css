@@ -1,0 +1,40 @@
+/* Опциональный helper для удобной темизации секции.
+   Сам layout-секцию уже создаёт; этот компонент только настраивает
+   CSS-переменные фона / accent / выравнивание. */
+
+.inner {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.themeLight {
+  --stack-bg: #ffffff;
+  --stack-fg: #0f172a;
+  --stack-accent: #2563eb;
+}
+
+.themeMuted {
+  --stack-bg: #f8fafc;
+  --stack-fg: #0f172a;
+  --stack-accent: #2563eb;
+}
+
+.themeDark {
+  --stack-bg: #0f172a;
+  --stack-fg: #ffffff;
+  --stack-accent: #60a5fa;
+}
+
+.themeBrand {
+  --stack-bg: #2563eb;
+  --stack-fg: #ffffff;
+  --stack-accent: #ffffff;
+}
+
+/* CSS-переменные применяются на родительский <section> (от layout)
+   через :where + selector hack — но проще: задаём прямо на корне через style.
+   В .tsx-файле подмешиваем classNames + inline style. */
