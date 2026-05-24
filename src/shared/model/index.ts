@@ -4,5 +4,4 @@ export {
 export type {
   InterviewAnswerRecord,
   InterviewResult,
-  InterviewTopicResult,
 } from './interviewResult'

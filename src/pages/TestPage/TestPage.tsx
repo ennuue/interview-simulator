@@ -143,7 +143,7 @@ function createAnswerRecord({
     order: question.order,
     questionId: question.id,
     questionTitle: question.title,
-    references: question.references,
+    references: question.references ?? [],
     selectedAnswerIds,
     selectedAnswerTexts: getAnswerTexts(question, selectedAnswerIds),
     topic: question.topic,
