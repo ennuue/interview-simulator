@@ -76,6 +76,7 @@ export function FormatPage({ onChooseProfession }: FormatPageProps) {
                 <span className={styles.iconBox} aria-hidden="true">
                   <IoCheckmark className={styles.icon} />
                 </span>
+
                 <div className={styles.featureText}>
                   <Typograph
                     className={styles.featureTitle}
@@ -86,6 +87,7 @@ export function FormatPage({ onChooseProfession }: FormatPageProps) {
                   >
                     {feature.title}
                   </Typograph>
+
                   <Typograph
                     className={styles.featureDescription}
                     size="sm"

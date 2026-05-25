@@ -36,7 +36,8 @@ export function MainPage({ onStartPreparation }: MainPageProps) {
               tag="h1"
               weight={900}
             >
-              <span>Подготовься к техническому</span>
+              <span>Подготовься</span>
+              <span>к техническому</span>
               <span className={styles.titleUnderlined}>собеседованию</span>
             </Typograph>
             <Typograph

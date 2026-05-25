@@ -3,6 +3,7 @@
   padding: 142px var(--space-page-x) 96px;
   color: var(--color-text-inverse);
   background: var(--color-primary);
+  overflow: visible;
 }
 
 .container {
@@ -66,6 +67,7 @@
 
 .features {
   display: flex;
+  min-width: 0;
   flex-direction: column;
   gap: 14px;
 }
@@ -113,13 +115,19 @@
 
 @media (max-width: 1100px) {
   .page {
-    padding-top: 96px;
+    min-height: auto;
+    padding: 96px var(--space-page-x) 72px;
   }
 
   .content {
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 48px;
+    align-items: start;
+  }
+
+  .hero {
+    max-width: 720px;
   }
 
   .features {
@@ -130,11 +138,114 @@
 
 @media (max-width: 720px) {
   .page {
-    padding: 72px 20px 56px;
+    min-height: auto;
+    padding: 56px 20px 48px;
+    overflow: visible;
+  }
+
+  .container {
+    max-width: none;
+  }
+
+  .content {
+    display: flex;
+    min-height: auto;
+    flex-direction: column;
+    gap: 36px;
+    align-items: stretch;
+  }
+
+  .hero {
+    width: 100%;
+    max-width: none;
+  }
+
+  .badge {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: clamp(40px, 11vw, 52px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.045em;
+  }
+
+  .description {
+    max-width: none;
+    margin: 24px 0 28px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .button {
+    width: 100%;
+    min-width: 0;
+    min-height: 56px;
+  }
+
+  .features {
+    width: 100%;
+    max-width: none;
+    gap: 12px;
   }
 
   .feature {
+    min-height: auto;
     align-items: flex-start;
+    gap: 14px;
     padding: 16px;
+    border-radius: 16px;
+  }
+
+  .iconBox {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .featureTitle {
+    font-size: 17px;
+    line-height: 1.25;
+  }
+
+  .featureDescription {
+    font-size: 14px;
+    line-height: 1.45;
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 44px 16px 40px;
+  }
+
+  .content {
+    gap: 32px;
+  }
+
+  .title {
+    font-size: clamp(34px, 10.2vw, 42px) !important;
+    line-height: 1.08 !important;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .feature {
+    padding: 14px;
+  }
+
+  .featureTitle {
+    font-size: 16px;
+  }
+
+  .featureDescription {
+    font-size: 13px;
   }
 }

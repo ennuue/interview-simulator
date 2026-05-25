@@ -4,6 +4,7 @@
   align-items: center;
   padding: 80px 78px;
   background: var(--color-bg);
+  overflow-x: hidden;
 }
 
 .container {
@@ -14,14 +15,15 @@
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 660px) minmax(520px, 570px);
-  gap: 64px;
+  grid-template-columns: minmax(0, 620px) minmax(520px, 570px);
+  gap: 72px;
   align-items: center;
   justify-content: center;
 }
 
 .heroContent {
-  max-width: 630px;
+  max-width: 620px;
+  min-width: 0;
 }
 
 .heroBadge {
@@ -29,18 +31,18 @@
 }
 
 .title {
-  max-width: 660px;
+  max-width: 620px;
   margin: 0;
   font-size: clamp(64px, 5.45vw, 84px) !important;
   line-height: 1.04 !important;
   letter-spacing: -0.065em;
-  white-space: normal;
   overflow-wrap: normal;
-  word-break: keep-all;
+  word-break: normal;
 }
 
 .title span {
   display: block;
+  white-space: nowrap;
 }
 
 .titleAccent {
@@ -51,6 +53,7 @@
   position: relative;
   display: inline-block;
   width: fit-content;
+  max-width: 100%;
 }
 
 .titleUnderlined::after {
@@ -65,6 +68,7 @@
 }
 
 .description {
+  max-width: 580px;
   margin: 34px 0 36px;
 }
 
@@ -79,7 +83,10 @@
 }
 
 .questionCard {
+  width: 100%;
+  max-width: 570px;
   padding: 30px;
+  justify-self: end;
 }
 
 .questionCard h3 {
@@ -94,6 +101,7 @@
 }
 
 .timer {
+  flex: 0 0 auto;
 }
 
 .questionContent {
@@ -126,9 +134,11 @@
   width: 100%;
 }
 
+/* Планшеты */
 @media (max-width: 1180px) {
   .page {
-    padding: 32px 24px 56px;
+    align-items: flex-start;
+    padding: 56px 32px;
   }
 
   .hero {
@@ -137,12 +147,136 @@
   }
 
   .heroContent {
-    max-width: none;
+    max-width: 760px;
+  }
+
+  .title {
+    max-width: 760px;
+    font-size: clamp(56px, 8vw, 78px) !important;
+  }
+
+  .description {
+    max-width: 680px;
+  }
+
+  .questionCard {
+    max-width: 640px;
+    justify-self: start;
   }
 }
 
+/* Телефон */
 @media (max-width: 720px) {
+  .page {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 28px 20px 48px;
+    overflow-x: hidden;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    align-items: stretch;
+  }
+
+  .heroContent {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .heroBadge {
+    margin-bottom: 26px;
+  }
+
+  .title {
+    max-width: 100%;
+    margin: 0;
+    font-size: clamp(38px, 11.5vw, 48px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.055em;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+
+  .title span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .titleUnderlined {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .description {
+    max-width: 100%;
+    margin: 28px 0 30px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .cta {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+  }
+
   .questionCard {
-    padding: 20px;
+    width: 100%;
+    max-width: none;
+    padding: 22px;
+    justify-self: stretch;
+  }
+
+  .questionHeader {
+    gap: 12px;
+  }
+
+  .questionTitle {
+    margin-bottom: 18px;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .progress {
+    margin-bottom: 20px;
+    --progress-height: 7px;
+  }
+
+  .answers {
+    gap: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 24px 16px 40px;
+  }
+
+  .title {
+    font-size: clamp(34px, 10.7vw, 42px) !important;
+    letter-spacing: -0.05em;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .questionCard {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .questionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .questionTitle {
+    font-size: 20px;
   }
 }

@@ -1,25 +1,275 @@
-.routeShell {
-  min-height: 100svh;
-  animation: routeEnter 0.48s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform, filter;
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 80px 78px;
+  background: var(--color-bg);
+  overflow-x: hidden;
 }
 
-@keyframes routeEnter {
-  from {
-    opacity: 0;
-    transform: translateY(18px) scale(0.985);
-    filter: blur(10px);
+.container {
+  width: 100%;
+  max-width: 1294px;
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 640px) minmax(520px, 570px);
+  gap: 88px;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroContent {
+  max-width: 640px;
+  min-width: 0;
+}
+
+.heroBadge {
+  margin-bottom: 34px;
+}
+
+.title {
+  max-width: 640px;
+  margin: 0;
+  font-size: clamp(68px, 5.2vw, 86px) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -0.065em;
+}
+
+.title span {
+  display: block;
+  white-space: nowrap;
+}
+
+.titleAccent {
+  color: var(--color-primary);
+}
+
+.titleUnderlined {
+  position: relative;
+  display: inline-block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.titleUnderlined::after {
+  content: '';
+  position: absolute;
+  right: 0.08em;
+  bottom: 0.02em;
+  left: 0.1em;
+  height: 5px;
+  border-radius: 999px;
+  background: var(--color-primary-border);
+}
+
+.description {
+  max-width: 580px;
+  margin: 34px 0 36px;
+}
+
+.cta {
+  min-width: 206px;
+}
+
+.buttonArrow {
+  width: 22px;
+  height: 22px;
+  margin-left: 12px;
+}
+
+.questionCard {
+  width: 100%;
+  max-width: 570px;
+  padding: 30px;
+  justify-self: end;
+}
+
+.questionCard h3 {
+  margin: 0 0 20px;
+}
+
+.questionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.timer {
+  flex: 0 0 auto;
+}
+
+.questionContent {
+  min-width: 0;
+}
+
+.questionTitle {
+  margin: 0 0 22px;
+}
+
+.questionTitle code {
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+}
+
+.progress {
+  margin-bottom: 24px;
+  --progress-height: 9px;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.answerButton {
+  min-width: 0;
+  width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .page {
+    align-items: flex-start;
+    padding: 56px 32px;
   }
 
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .heroContent {
+    max-width: 760px;
+  }
+
+  .title {
+    max-width: 760px;
+    font-size: clamp(56px, 8vw, 78px) !important;
+  }
+
+  .description {
+    max-width: 680px;
+  }
+
+  .questionCard {
+    max-width: 640px;
+    justify-self: start;
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .routeShell {
-    animation: none;
+@media (max-width: 720px) {
+  .page {
+    min-height: auto;
+    align-items: flex-start;
+    padding: 28px 20px 48px;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    align-items: stretch;
+  }
+
+  .heroContent {
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+  }
+
+  .heroBadge {
+    margin-bottom: 26px;
+  }
+
+  .title {
+    max-width: 100%;
+    font-size: clamp(40px, 11.4vw, 48px) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.055em;
+  }
+
+  .title span {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .titleUnderlined {
+    width: fit-content;
+    max-width: 100%;
+  }
+
+  .description {
+    max-width: 100%;
+    margin: 28px 0 30px;
+    font-size: 18px;
+    line-height: 1.45;
+  }
+
+  .cta {
+    width: 100%;
+    min-width: 0;
+    min-height: 54px;
+  }
+
+  .questionCard {
+    width: 100%;
+    max-width: none;
+    padding: 22px;
+    justify-self: stretch;
+  }
+
+  .questionHeader {
+    gap: 12px;
+  }
+
+  .questionTitle {
+    margin-bottom: 18px;
+    font-size: 22px;
+    line-height: 1.25;
+  }
+
+  .progress {
+    margin-bottom: 20px;
+    --progress-height: 7px;
+  }
+
+  .answers {
+    gap: 10px;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .page {
+    padding: 24px 16px 40px;
+  }
+
+  .title {
+    font-size: clamp(32px, 10vw, 40px) !important;
+    line-height: 1.06 !important;
+    letter-spacing: -0.045em;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .questionCard {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .questionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .questionTitle {
+    font-size: 20px;
   }
 }
